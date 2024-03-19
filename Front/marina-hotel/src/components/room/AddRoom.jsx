@@ -1,5 +1,6 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
 
 import React, { useState } from "react";
 
@@ -67,14 +68,50 @@ const handleSubmit = async (e) =>{
                             <label htmlFor="roomType" className="form-label">
                                 Room Type
                                 </label>
-                                <div></div>
+                                <div>
+                                   <RoomTypeSelector handleRoomInputChange ={handleRoomInputChange} 
+                                   newRoom={newRoom}/>
+
+                                </div>
 
                         <div className="mb-3">
                             <label htmlFor="roomPrice" className="form-label">
-                                Room Type
+                                Room Price
                                 </label>
-                                <div></div>
+                                <input className="form-control"
+                                 required
+                                 id="roomPrice"
+                                 name="roomPrice"
+                                 type="number"
+                                 value={newRoom.roomPrice}
+                                 onChange={handleRoomInputChange}
+                                />
+                                
+                                <div className="mb-3">
+                            <label htmlFor="roomPhoto" className="form-label">
+                                Room Photo
+                                </label>
+                               <input 
+                               id="photo"
+                               name="photo"
+                               type="file"
+                               className="form-control"
+                               onChange={handleImageChange}
+                               />
+                               {imagePreview && (
+                                <img src={imagePreview}
+                                alt="Preview Room Photo"
+                                style={{maxWidth:"400px",maxHeight:"400px"}}
+                                className="mb-3"/> 
+                               )}  
 
+                        </div>
+                        </div>
+                        </div>
+                        <div className="d-grid d-md-flex mt-2">
+                            <button className="btn btn-online-primary ml-5">
+                                Save Room
+                            </button>
 
                         </div>
                     </form>
