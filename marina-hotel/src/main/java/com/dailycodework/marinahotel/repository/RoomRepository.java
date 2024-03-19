@@ -1,4 +1,7 @@
 package com.dailycodework.marinahotel.repository;
 
-public interface RoomRepository {
+import com.dailycodework.marinahotel.model.Room;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RoomRepository extends JpaRepository<Room,Long> {
 }

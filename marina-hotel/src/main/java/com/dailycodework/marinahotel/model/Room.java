@@ -32,7 +32,7 @@ public class Room {
 
     @Lob
     private Blob photo ;
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany (mappedBy="room" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BookedRoom> bookings ;
 
     public Room(){
@@ -44,6 +44,7 @@ public class Room {
             bookings = new ArrayList<>() ;
         }
         bookings.add(booking);
+        assert booking != null;
         booking.setRoom(this);
         isBooked =true ;
         String bookingCode = RandomStringUtils.randomNumeric(10);
