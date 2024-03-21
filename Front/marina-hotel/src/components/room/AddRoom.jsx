@@ -54,6 +54,13 @@ const handleSubmit = async (e) =>{
     }catch(error){
         setErrorMessage(errorMessage)
     }
+    setTimeout(()=>{
+        setSuccessMessage("")
+        setErrorMessage("")
+
+    },3000
+
+    )
 }
     return (
         <>
@@ -63,6 +70,18 @@ const handleSubmit = async (e) =>{
                     <h2 className="mt-5 mb-2">
                      Add a new room   
                     </h2>
+                    {succesMessage && (
+                        <div className="alert-success fade show">
+                            {succesMessage}
+                        </div>
+                    )}
+                     {errorMessageMessage && (
+                        <div className="alert-danger fade show">
+                            {errorMessageMessage}
+                        </div>
+                    )}
+
+
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label htmlFor="roomType" className="form-label">
@@ -71,7 +90,8 @@ const handleSubmit = async (e) =>{
                                 <div>
                                    
                                    <RoomTypeSelector handleRoomInputChange ={handleRoomInputChange} 
-                                   newRoom={newRoom}/>
+                                   newRoom={newRoom}
+                                   />
 
                                 </div>
 
