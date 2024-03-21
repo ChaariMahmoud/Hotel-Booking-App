@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from "react";
 import { getRoomTypes } from "../utils/ApiFunctions";
+import  {} from '../room/AddRoom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const RoomTypeSelector = ({handleRoomInputChange,newRoom}) => {
     const[roomTypes,setRoomTypes]=useState([""])
@@ -12,7 +12,6 @@ const RoomTypeSelector = ({handleRoomInputChange,newRoom}) => {
         getRoomTypes().then((data) =>{
             setRoomTypes(data)
         })
-
     },[])
     const handleNewRoomTypeInputChange =  (e) =>{
         setNewRoomType(e.target.value);

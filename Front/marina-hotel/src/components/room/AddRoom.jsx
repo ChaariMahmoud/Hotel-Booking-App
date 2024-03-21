@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable no-undef */
 
-import React, { useState } from "react";
-
+import React,{useState} from "react";
+import { RoomTypeSelector} from '../common/RoomTypeSelector';
+import "../utils/ApiFunctions"
+import 'bootstrap/dist/css/bootstrap.min.css';
 const AddRoom = () => {
     const[newRoom,setNewRoom] = useState(
         {
@@ -13,7 +12,8 @@ const AddRoom = () => {
         }
     )
 
-cosnt[imagePreview,setImagePreview] = useState("")    
+const[imagePreview,setImagePreview] = useState("")    
+
 const [succesMessage,setSuccessMessage] = useState ("")
 const [errorMessage ,setErrorMessage] = useState("")
 
@@ -69,6 +69,7 @@ const handleSubmit = async (e) =>{
                                 Room Type
                                 </label>
                                 <div>
+                                   
                                    <RoomTypeSelector handleRoomInputChange ={handleRoomInputChange} 
                                    newRoom={newRoom}/>
 
