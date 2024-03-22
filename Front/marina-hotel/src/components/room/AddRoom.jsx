@@ -55,8 +55,8 @@ const handleSubmit = async (e) =>{
         setErrorMessage(errorMessage)
     }
     setTimeout(()=>{
-        setSuccessMessage("")
-        setErrorMessage("")
+        setSuccessMessage("A new room was added to the database")
+        setErrorMessage("Error adding room")
 
     },3000
 
