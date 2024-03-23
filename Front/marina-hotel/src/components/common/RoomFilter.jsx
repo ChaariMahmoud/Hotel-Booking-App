@@ -30,7 +30,7 @@ const roomTypes =["",...new Set(data.map((room) => room.roomType))]
                 <option value={""}>select a room type to filter ...</option>
                 {roomTypes.map((type,index)=>(
                   <option key={index} value={String(type)}>
-                    {type}
+                    {String(type)}
                   </option>  
                 ))}
             </select>
