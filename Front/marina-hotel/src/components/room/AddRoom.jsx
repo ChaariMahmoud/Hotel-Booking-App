@@ -62,86 +62,79 @@ const handleSubmit = async (e) =>{
 
     )
 }
-    return (
-        <>
-        <section className="container, mt-5 mb-5">
+return (
+    <>
+        <section className="container mt-5 mb-5">
             <div className="room justify-content-center"> 
                 <div className="col-md-8 col-lg-6">
                     <h2 className="mt-5 mb-2">
-                     Add a new room   
+                        Add a new room   
                     </h2>
                     {succesMessage && (
                         <div className="alert-success fade show">
                             {succesMessage}
                         </div>
                     )}
-                     {errorMessageMessage && (
+                    {errorMessage && (
                         <div className="alert-danger fade show">
-                            {errorMessageMessage}
+                            {errorMessage}
                         </div>
                     )}
-
 
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label htmlFor="roomType" className="form-label">
                                 Room Type
-                                </label>
-                                <div>
-                                   
-                                   <RoomTypeSelector handleRoomInputChange ={handleRoomInputChange} 
-                                   newRoom={newRoom}
-                                   />
-
-                                </div>
-
+                            </label>
+                            <div>
+                                <RoomTypeSelector handleRoomInputChange ={handleRoomInputChange} 
+                                    newRoom={newRoom}
+                                />
+                            </div>
+                        </div>
                         <div className="mb-3">
                             <label htmlFor="roomPrice" className="form-label">
                                 Room Price
-                                </label>
-                                <input className="form-control"
-                                 required
-                                 id="roomPrice"
-                                 name="roomPrice"
-                                 type="number"
-                                 value={newRoom.roomPrice}
-                                 onChange={handleRoomInputChange}
-                                />
-                                
-                                <div className="mb-3">
+                            </label>
+                            <input className="form-control"
+                                required
+                                id="roomPrice"
+                                name="roomPrice"
+                                type="number"
+                                value={newRoom.roomPrice}
+                                onChange={handleRoomInputChange}
+                            />
+                        </div>
+                        <div className="mb-3">
                             <label htmlFor="roomPhoto" className="form-label">
                                 Room Photo
-                                </label>
-                               <input 
-                               id="photo"
-                               name="photo"
-                               type="file"
-                               className="form-control"
-                               onChange={handleImageChange}
-                               />
-                               {imagePreview && (
+                            </label>
+                            <input 
+                                id="photo"
+                                name="photo"
+                                type="file"
+                                className="form-control"
+                                onChange={handleImageChange}
+                            />
+                            {imagePreview && (
                                 <img src={imagePreview}
-                                alt="Preview Room Photo"
-                                style={{maxWidth:"400px",maxHeight:"400px"}}
-                                className="mb-3"/> 
-                               )}  
-
-                        </div>
-                        </div>
+                                    alt="Preview Room Photo"
+                                    style={{maxWidth:"400px",maxHeight:"400px"}}
+                                    className="mb-3"/> 
+                            )}  
                         </div>
                         <div className="d-grid d-md-flex mt-2">
                             <button className="btn btn-online-primary ml-5">
                                 Save Room
                             </button>
-
                         </div>
                     </form>
                 </div>
             </div>
-
         </section>
-        </>
-    )
+    </>
+);
+
 }
 
 export default AddRoom

@@ -54,3 +54,27 @@ export async function deleteRoom(roomId){
 
     }
 }
+
+
+//Updates a room
+export async function updateRoom(roomId,roomData){
+    const formData = new FormData()
+    formData.append("roomType",roomData.roomType)
+    formData.append("roomPrice",roomData.roomPrice)
+    formData.append("photo",roomData.photo)
+    const response = await api.put(`/rooms/update/${roomId}`);
+    return response
+}
+
+
+//Get a room by the id
+export async function grtRoomById(roomId){
+    try{
+        const result = await api.get(`/rooms/room/${roomId}`);
+        return result.data
+
+    }catch(error){
+        throw new Error(`Error fetching room ${error.message}`)
+
+    }
+}
