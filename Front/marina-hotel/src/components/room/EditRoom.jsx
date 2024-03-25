@@ -71,7 +71,7 @@ return (
             <div className="room justify-content-center"> 
                 <div className="col-md-8 col-lg-6">
                     <h2 className="mt-5 mb-2">
-                        Add a new room   
+                        Edit room   
                     </h2>
                     {succesMessage && (
                         <div className="alert-success fade show">
@@ -113,7 +113,7 @@ return (
                                 name="photo"
                                 type="file"
                                 className="form-control"
-                                onChange={handleImageChange}
+                                onChange={handleInputChange}
                             />
                             {imagePreview && (
                                 <img src={imagePreview}
