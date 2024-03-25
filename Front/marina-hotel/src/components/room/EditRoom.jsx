@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { updateRoom ,getRoomById } from "../utils/ApiFunctions";
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 
 const EditRoom =() =>{
     const[room,setRoom] = useState(
@@ -123,9 +123,12 @@ return (
                             )}  
                         </div>
                         <div className="d-grid d-md-flex mt-2">
-                            <button className="btn btn-online-primary ml-5">
-                                Save Room
-                            </button>
+                           <Link to={"/exiting-rooms"} className="btn btn-outline-info ml-5">
+                           back
+                           </Link> 
+                           <button type="submit" className="btn btn-outline-warning">
+                            Edit Room
+                           </button>
                         </div>
                     </form>
                 </div>
