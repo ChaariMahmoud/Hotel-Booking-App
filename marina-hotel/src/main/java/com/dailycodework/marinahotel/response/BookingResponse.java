@@ -21,13 +21,19 @@ public class BookingResponse {
     private int totalNumOfGuest ;
     private String bookingConformationCode ;
 
+
     public BookingResponse(Long bookingId, LocalDate checkInDate, LocalDate getCheckInDateDate,
-                           String bookingConformationCode) {
+                           String bookingConformationCode ) {
         BookingId = bookingId;
         this.checkInDate = checkInDate;
         this.getCheckInDateDate = getCheckInDateDate;
         this.bookingConformationCode = bookingConformationCode;
 
+
     }
 
+
+    //Missing implementation
+    public void add(BookingResponse bookingResponse) {
+    }
 }

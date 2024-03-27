@@ -25,7 +25,7 @@ public class BookedRoom {
 
 
     @Column (name = "check_Out")
-    private LocalDate getCheckInDateDate ;
+    private LocalDate CheckOutDate;
 
     @Column (name = "guest_FullName")
     private String guestFullName ;

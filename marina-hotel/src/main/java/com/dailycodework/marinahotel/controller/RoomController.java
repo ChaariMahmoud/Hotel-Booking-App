@@ -10,7 +10,6 @@ import com.dailycodework.marinahotel.service.IRoomService;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -101,7 +100,7 @@ public ResponseEntity<Optional<RoomResponse>> getRoomById(@PathVariable Long roo
       List<BookedRoom> bookings =getAllBookingsByRoomId(room.getId());
       List<BookingResponse> bookingInfo = bookings.stream().map(booking ->new BookingResponse(booking.getBookingId(),
               booking.getCheckInDate(),
-              booking.getGetCheckInDateDate(),/* check out */
+              booking.getCheckOutDate(),/* check out */
               booking.getBookingConformationCode())).toList();
       byte[] photoByte = null ;
       Blob photoBlob = room.getPhoto();
