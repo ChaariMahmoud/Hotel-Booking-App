@@ -68,3 +68,5 @@ const RoomTypeSelector = ({handleRoomInputChange,newRoom}) => {
         </>
     )
 }
+
+export default RoomTypeSelector;

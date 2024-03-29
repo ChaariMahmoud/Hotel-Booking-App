@@ -1,16 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import AddRoom from './components/room/AddRoom';
-import ExistingRooms from './components/room/ExistingRooms.jsx'
+import ExistingRooms from './components/room/ExistingRooms'
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js"
 import { BrowserRouter as Router ,Routes,Route } from 'react-router-dom';
 import Home from './components/home/Home.jsx'
-import EditRoom from './components/room/EditRoom.jsx'
-import NavBar from './components/layout/NavBar.jsx';
-import Footer from './components/layout/Footer.jsx';
-import RoomListing from './components/room/RoomListing.jsx';
-import Admin from './components/admin/Admin.jsx';
+import EditRoom from './components/room/EditRoom'
+import NavBar from './components/layout/NavBar';
+import Footer from './components/layout/Footer';
+import RoomListing from './components/room/RoomListing';
+import Admin from './components/admin/Admin';
 
 function App() {
   return (

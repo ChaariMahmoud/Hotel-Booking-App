@@ -161,4 +161,4 @@ const currentRooms = filteredRooms.slice(indexOfFirstRoom,indexOfLastRoom)
     )
 
 }
-export default ExistingRooms
+export default ExistingRooms ;

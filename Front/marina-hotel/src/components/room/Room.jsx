@@ -73,4 +73,4 @@ const renderRooms=() =>{
         </Container>
     )
 }
-export default Room
+export default Room ;

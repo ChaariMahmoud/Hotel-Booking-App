@@ -1,6 +1,6 @@
 
 import React,{useState} from "react";
-import { RoomTypeSelector} from '../common/RoomTypeSelector';
+import  RoomTypeSelector from '../common/RoomTypeSelector.jsx';
 import "../utils/ApiFunctions"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
@@ -125,9 +125,8 @@ return (
                             )}  
                         </div>
                         <div className="d-grid d-md-flex mt-2">
-                            <Link to={"Existing-rooms"} className="btn btn-outline-info">
-                                Back
-                             </Link>
+                        
+                            
                             <button className="btn btn-online-primary ml-5">
                                 Save Room
                             </button>
@@ -141,4 +140,4 @@ return (
 
 }
 
-export default AddRoom
+export default AddRoom;

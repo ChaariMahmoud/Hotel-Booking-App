@@ -41,11 +41,11 @@ const NavBar = () => {
                 </ul>
 
                 <ul className="d-flex navbar-nav">
-                   <li className="nav-item">
+                   <ul className="nav-item">
                     <NavLink className="nav-link" to={"/find-booking"}>
                         Find My Booking
                     </NavLink>
-                    <li className="nav-item dropdown">
+                    <ul className="nav-item dropdown">
                       <a
                       className={`nav-link dropdown-toggle ${showAccount ? "show" : ""}`}
                       href="#"
@@ -75,8 +75,8 @@ const NavBar = () => {
                             </Link>
                         </li>
                       </ul>
-                    </li>
-                    </li> 
+                    </ul>
+                    </ul> 
                 </ul>
                </div>
 
