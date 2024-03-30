@@ -1,4 +1,5 @@
 package com.dailycodework.marinahotel.service;
+import com.dailycodework.marinahotel.exception.RessourceNotFoundException;
 import com.dailycodework.marinahotel.model.Room ;
 import com.dailycodework.marinahotel.exception.InvalidBookingRequestException;
 import com.dailycodework.marinahotel.model.BookedRoom;
@@ -17,6 +18,17 @@ public class BookingService implements IBookingService {
     public List<BookedRoom> getAllBookings() {
         return bookingRepository.findAll();
     }
+
+    @Override
+    public List<BookedRoom> getBookingsByUserEmail(String email) {
+        return bookingRepository.findByGuestEmail(email);
+    }
+
+    @Override
+    public List<BookedRoom> getAllBookingsByRoomId(Long roomId) {
+        return bookingRepository.findByRoomId(roomId);
+    }
+
     public List<BookedRoom> geyAllBookingsByRoomId(Long roomId) {
 
         return bookingRepository.findByRoomId(roomId) ;
@@ -41,14 +53,14 @@ public class BookingService implements IBookingService {
         }else{
             throw new InvalidBookingRequestException("Sorry this room is not available for the selected date");
         }
-        return bookingRequest.getBookingConformationCode();
+        return bookingRequest.getBookingConfirmationCode();
     }
 
 
 
     @Override
     public BookedRoom findByBookingConfirmationCode(String confirmationCode) {
-        return bookingRepository.findByBookingConfimationCode(confirmationCode);
+        return bookingRepository.findByBookingConfirmationCode(confirmationCode);
     }
 
     private boolean roomIsAvailable(BookedRoom bookingRequest, List<BookedRoom> existingBookings) {

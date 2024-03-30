@@ -13,27 +13,23 @@ import java.time.LocalDate;
 public class BookingResponse {
     private Long BookingId ;
     private LocalDate checkInDate ;
-    private LocalDate getCheckInDateDate ;
+    private LocalDate CheckOutDate ;
     private String guestFullName ;
     private String guestEmail ;
     private int NumOfAdults ;
     private int NumOfChildren ;
     private int totalNumOfGuest ;
     private String bookingConformationCode ;
+    private RoomResponse room;
 
 
-    public BookingResponse(Long bookingId, LocalDate checkInDate, LocalDate getCheckInDateDate,
+    public BookingResponse(Long bookingId, LocalDate checkInDate, LocalDate CheckOutDate,
                            String bookingConformationCode ) {
         BookingId = bookingId;
         this.checkInDate = checkInDate;
-        this.getCheckInDateDate = getCheckInDateDate;
+        this.CheckOutDate = CheckOutDate;
         this.bookingConformationCode = bookingConformationCode;
 
 
-    }
-
-
-    //Missing implementation
-    public void add(BookingResponse bookingResponse) {
     }
 }
