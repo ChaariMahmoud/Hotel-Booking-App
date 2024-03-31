@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import React,{useState} from "react";
 import  RoomTypeSelector from '../common/RoomTypeSelector.jsx';
@@ -125,7 +126,8 @@ return (
                             )}  
                         </div>
                         <div className="d-grid d-md-flex mt-2">
-                        
+                           
+                            
                             
                             <button className="btn btn-online-primary ml-5">
                                 Save Room
