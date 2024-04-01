@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react"
-import BookingForm from "../booking/BookingForm"
+import BookingForm from "../bookings/BookingForm"
 import {
 	FaUtensils,
 	FaWifi,

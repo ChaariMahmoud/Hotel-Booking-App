@@ -127,7 +127,9 @@ return (
                         </div>
                         <div className="d-grid d-md-flex mt-2">
                            
-                            
+                                <Link to={"/existing-rooms"} className="btn btn-outline-info">
+									Existing rooms
+								</Link>
                             
                             <button className="btn btn-online-primary ml-5">
                                 Save Room
