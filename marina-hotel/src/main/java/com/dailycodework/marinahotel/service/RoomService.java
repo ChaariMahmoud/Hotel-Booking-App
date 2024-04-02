@@ -5,6 +5,7 @@ import com.dailycodework.marinahotel.model.Room;
 import com.dailycodework.marinahotel.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.sql.rowset.serial.SerialBlob;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@CrossOrigin("http://localhost:5173")
 public class RoomService implements IRoomService {
     private final RoomRepository roomRepository;
 
@@ -88,7 +90,7 @@ public class RoomService implements IRoomService {
 
     @Override
     public List<Room> getAvailableRooms(LocalDate checkInDate, LocalDate checkOutDate, String roomType) {
-        return null;
+        return roomRepository.findAvailableRoomsByDatesAndType(checkInDate,checkOutDate,roomType);
     }
 
 }

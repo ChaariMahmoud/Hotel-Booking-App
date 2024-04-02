@@ -12,6 +12,7 @@ import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -34,6 +35,7 @@ import java.util.Optional;
 public class RoomController {
     private final IRoomService roomService ;
     private final BookingService bookingService ;
+
     @PostMapping("/add/new-room")
     public ResponseEntity<RoomResponse> addNewRoom (
             @RequestParam("photo") MultipartFile photo ,
