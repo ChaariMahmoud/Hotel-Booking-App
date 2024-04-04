@@ -1,32 +1,34 @@
+server:
+  port: 9192
 
+spring:
+  datasource:
+    username: root
+    password: mahmoud
+    url: jdbc:mysql://localhost:3306/hotel_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
-  spring:
-    datasource:
-      username: root
-      password: mahmoud
-      url: jdbc:mysql://localhost:3306/hotel_db
-      driver-class-name: com.mysql.cj.jdbc.Driver
-
-
-
-    jpa:
-      show-sql: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
       hibernate:
-        ddl-auto: update
-      properties:
-        hibernate:
-          format_sql: true
-          
-      open-in-view : false
+        format_sql: true
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 2KB
+
+  security:
+    jwt:
+      secret-key: 36763979244226452948404D635166546A576D5A7134743777217A25432A462D
+      expire-length: 3600000
 
 
-    servlet:
-      multipart:
-        max-file-size: 5MB
-        max-request-size: 5MB
-        file-size-threshold: 2KB
-  server:
-    port: 9192
 
 
 
