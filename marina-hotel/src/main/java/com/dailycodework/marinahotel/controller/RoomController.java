@@ -29,7 +29,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/rooms")
-
+@CrossOrigin("http://localhost:5173")
 
 
 public class RoomController {
