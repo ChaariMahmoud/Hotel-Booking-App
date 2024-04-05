@@ -11,7 +11,7 @@ export const api = axios.create(
     }
 )
 //add new room to the bd
-export async function AddRoom(photo ,roomType ,roomPrice){
+export async function addRoom(photo ,roomType ,roomPrice){
     const fromData = new fromData ()
     fromData.append("photo",photo)
     fromData.append("roomType",roomType)
