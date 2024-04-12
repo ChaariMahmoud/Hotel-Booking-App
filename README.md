@@ -126,13 +126,13 @@ Open your browser and navigate to http://localhost:5174 to view the application.
 #### Swagger Documentation
 The Swagger documentation for the backend API can be accessed at http://localhost:8080/swagger-ui.html when the backend server is running.
 
-Branches
+#### Branches
 main: Contains the frontend code.
 backend: Contains the backend code.
-Contributing
+#### Contributing
 Contributions are welcome! Feel free to open issues and pull requests.
 
-Special Thanks
+#### Special Thanks
 A special acknowledgment to [Wajih Jouini](https://github.com/jouini-wajih) for his valuable contributions to the frontend of this project.
 
 Let me know if there's anything else you'd like to add or modify!
