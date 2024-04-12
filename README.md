@@ -18,7 +18,7 @@ This is a hotel booking application developed using React Vite 4.5.4 for the fro
 
 ## Introduction
 
-This project aims to develop a hotel booking system using the advanced features of the Spring Framework for the backend and React or Angular for the frontend. The platform allows users to search, book, and manage hotel rooms online, ensuring a smooth and secure experience. The APIs are tested using Postman, and interactive documentation is provided via Swagger.
+This project aims to develop a hotel booking system using the advanced features of the Spring Framework for the backend and React for the frontend. The platform allows users to search, book, and manage hotel rooms online, ensuring a smooth and secure experience. The APIs are tested using Postman, and interactive documentation is provided via Swagger.
 
 ## Key Components
 
@@ -134,8 +134,5 @@ Contributions are welcome! Feel free to open issues and pull requests.
 
 Special Thanks
 A special acknowledgment to [Wajih Jouini](https://github.com/jouini-wajih) for his valuable contributions to the frontend of this project.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 Let me know if there's anything else you'd like to add or modify!
