@@ -11,7 +11,6 @@ This is a hotel booking application developed using React Vite 4.5.4 for the fro
 - [Getting Started](#getting-started)
   - [Installation](#installation)
   - [Usage](#usage)
-- [Swagger Documentation](#swagger-documentation)
 - [Contributing](#contributing)
 - [Special Thanks](#special-thanks)
 - [License](#license)
@@ -41,11 +40,8 @@ This project aims to develop a hotel booking system using the advanced features 
 5. **Postman**:
    - Utilization of Postman to test the developed APIs.
    - Creation of API collections and test scenarios to verify the application's functionality.
-
-6. **Swagger**:
-   - Configuration of Swagger to generate interactive API documentation.
    
-7. **Frontend in React vite**:
+6. **Frontend in React vite**:
    - The frontend of the application can be developed using React Vite with bootstrap, providing a modern and responsive user experience.
 
 
@@ -123,8 +119,6 @@ npm run dev
 ```
 Open your browser and navigate to http://localhost:5174 to view the application.
 
-#### Swagger Documentation
-The Swagger documentation for the backend API can be accessed at http://localhost:8080/swagger-ui.html when the backend server is running.
 
 #### Branches
 main: Contains the frontend code.
