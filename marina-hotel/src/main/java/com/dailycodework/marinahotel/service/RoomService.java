@@ -70,22 +70,29 @@ public class RoomService implements IRoomService {
 
     @Override
     public Room updateRoom(Long roomId, String roomType, BigDecimal roomPrice, byte[] photoBytes) {
-        Room room = roomRepository.findById(roomId).get();
-        if (roomType != null) room.setRoomType(roomType);
-        if (roomPrice != null) room.setRoomPrice(roomPrice);
+        Room room = roomRepository.findById(roomId)
+                .orElseThrow(() -> new RessourceNotFoundException("Room not found with id: " + roomId));
+
+        if (roomType != null) {
+            room.setRoomType(roomType);
+        }
+        if (roomPrice != null) {
+            room.setRoomPrice(roomPrice);
+        }
         if (photoBytes != null && photoBytes.length > 0) {
             try {
                 room.setPhoto(new SerialBlob(photoBytes));
             } catch (SQLException ex) {
-                throw new InternalServerException("Fail updating room");
+                throw new InternalServerException("Failed to update room photo");
             }
         }
         return roomRepository.save(room);
     }
 
+
     @Override
     public Optional<Room> getRoomById(Long roomId) {
-        return Optional.of(roomRepository.findById(roomId).get());
+        return roomRepository.findById(roomId);
     }
 
     @Override

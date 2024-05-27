@@ -1,5 +1,6 @@
 package com.dailycodework.marinahotel.service;
 
+import com.dailycodework.marinahotel.exception.RoleNotFoundException;
 import com.dailycodework.marinahotel.exception.UserAlreadyExistsException;
 import com.dailycodework.marinahotel.model.Role;
 import com.dailycodework.marinahotel.model.User;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,17 +26,24 @@ public class UserService implements IUserService{
     private final RoleRepository roleRepository;
     @Override
     public User registerUser(User user) {
-        if (userRepository.existsByEmail(user.getEmail())){
+        if (userRepository.existsByEmail(user.getEmail())) {
             throw new UserAlreadyExistsException(user.getEmail() + " already exists");
         }
 
-
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         System.out.println(user.getPassword());
-        Role userRole = roleRepository.findByName("ROLE_USER").get();
-        user.setRoles(Collections.singletonList(userRole));
+
+        Optional<Role> roleOptional = roleRepository.findByName("ROLE_USER");
+        if (roleOptional.isPresent()) {
+            Role userRole = roleOptional.get();
+            user.setRoles(Collections.singletonList(userRole));
+        } else {
+            throw new RoleNotFoundException("Role 'ROLE_USER' not found");
+        }
+
         return userRepository.save(user);
     }
+
 
     @Override
     public List<User> getUsers() {
